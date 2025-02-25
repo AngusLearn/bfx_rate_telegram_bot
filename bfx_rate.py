@@ -2,6 +2,7 @@
 import requests
 from dotenv import load_dotenv
 import os
+import time
 
 # Load environment variables from .env file
 load_dotenv()
@@ -68,7 +69,7 @@ def fetch_funding_pool(currency):
 
 def fetch_funding_history(currency):
     try:
-        url = f"{base_url}/trades/{currency}/hist?limit=125&sort=-1"
+        url = f"{base_url}/trades/{currency}/hist?limit=125&sort=-1&start={(int(time.time()) - 600) * 1000}"
         headers = {
             'Accept': 'application/json'
         }
