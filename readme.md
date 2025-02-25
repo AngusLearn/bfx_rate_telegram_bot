@@ -33,14 +33,10 @@ This is a Telegram bot that provides real-time exchange rates for various crypto
 
 ## Usage
 
-1. Run the bot:
+1. Add a cronjob:
     ```sh
-    python bot.py
+    */5 * * * * python [your_dir]/bfx_rate_telegram_bot/bfx_rate.py
     ```
-2. Open Telegram and start a chat with your bot.
-3. Use the following commands to get exchange rates:
-    - `/rate BTCUSD` - Get the exchange rate for BTC to USD.
-    - `/rate ETHUSD` - Get the exchange rate for ETH to USD.
 
 ## Contributing
 
