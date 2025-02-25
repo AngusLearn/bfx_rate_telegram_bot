@@ -126,10 +126,10 @@ def fetch_and_print_data(currency):
 
         message = (f"{currency}\n"
                    f"High: {highest_rate * 100:.4f} ({highest_rate * 100 * 365:.2f}% APR)\n"
-                   f"Bought: {format_amount(total_bought)}{add_money_bags(total_bought)}\n"
-                   f"Sold: {format_amount(total_sold)}{add_money_bags(total_sold)}\n"
-                   f"Offers: {format_amount(total_offers)}{add_money(total_offers)}\n"
-                   f"Bids: {format_amount(total_bids)}{add_money(total_bids)}\n"
+                   f"Bought: {format_amount(total_bought)} {add_money_bags(total_bought)}\n"
+                   f"Sold: {format_amount(total_sold)} {add_money_bags(total_sold)}\n"
+                   f"Offers: {format_amount(total_offers)} {add_money(total_offers)}\n"
+                   f"Bids: {format_amount(total_bids)} {add_money(total_bids)}\n"
                    f"FRR: {frr * 100 :.5f}% ({frr * 100 * 365 :.5f}% APR)")
         send_telegram_message(message)
     else:
