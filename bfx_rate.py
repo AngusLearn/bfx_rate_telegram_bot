@@ -112,14 +112,14 @@ def fetch_and_print_data(currency):
     if frr is not None and total_offers is not None and total_bids is not None and highest_rate is not None:
         def add_money(amount):
             money = ""
-            while amount >= 1_000:
+            while amount >= 1000:
                 money += "💵"
                 amount /= 10
             return money
         
         def add_money_bags(amount):
             money_bags = ""
-            while amount >= 1_000:
+            while amount >= 1000:
                 money_bags += "💰"
                 amount /= 10
             return money_bags
@@ -127,7 +127,7 @@ def fetch_and_print_data(currency):
         message = (f"{currency}\n"
                    f"High: {highest_rate * 100 * 365:.2f}%\n"
                    f"Bought: {format_amount(total_bought)}{add_money_bags(total_bought)}\n"
-                   f"Sold: {format_amount(total_sold)}{add_money_bags(total_bought)}\n"
+                   f"Sold: {format_amount(total_sold)}{add_money_bags(total_sold)}\n"
                    f"Offers: {format_amount(total_offers)}{add_money(total_offers)}\n"
                    f"Bids: {format_amount(total_bids)}{add_money(total_bids)}\n"
                    f"FRR: {frr * 100 :.5f}% ({frr * 100 * 365 :.5f}% APR)")
