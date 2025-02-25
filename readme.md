@@ -27,7 +27,8 @@ This is a Telegram bot that provides real-time exchange rates for various crypto
 
 1. Create a `.env` file in the project directory and add your Telegram bot token:
     ```env
-    TELEGRAM_TOKEN=your_telegram_bot_token
+    BOT_TOKEN=your_telegram_bot_token
+    CHAT_ID=your_chat_id
     ```
 
 ## Usage
