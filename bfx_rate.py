@@ -127,7 +127,7 @@ def fetch_and_print_data(currency):
             return money_bags
 
         message = (f"Alert‼️‼️‼️\n"
-                   f"{currency}\n"
+                   f"===[{currency}]===\n"
                    f"High: {highest_rate * 100:.4f} ({highest_rate * 100 * 365:.2f}% APR)\n"
                    f"Bought: {format_amount(total_bought)}  {add_money_bags(total_bought)}\n"
                    f"Sold: {format_amount(total_sold)}  {add_money_bags(total_sold)}\n"
