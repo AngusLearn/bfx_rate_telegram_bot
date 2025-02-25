@@ -1,4 +1,4 @@
-    #!/usr/bin/env python3
+#!/usr/bin/env python3
 import requests
 from dotenv import load_dotenv
 import os
@@ -110,14 +110,27 @@ def fetch_and_print_data(currency):
     highest_rate, total_bought, total_sold = fetch_funding_history(currency)
 
     if frr is not None and total_offers is not None and total_bids is not None and highest_rate is not None:
+        def add_money(amount):
+            money = ""
+            while amount >= 1_000:
+                money_bags += "💵"
+                amount /= 10
+            return money
+        
+        def add_money_bags(amount):
+            money_bags = ""
+            while amount >= 1_000:
+                money_bags += "💰"
+                amount /= 10
+            return money_bags
+
         message = (f"{currency}\n"
-               f"Highest Rate: {highest_rate * 100 :.6f}% ({highest_rate * 100 * 365:.2f}% APR)\n"
-               f"Bought: {format_amount(total_bought)} USDT\n"
-               f"Sold: {format_amount(total_sold)} USDT\n"
-               f"Offers: {format_amount(total_offers)} USDT\n"
-               f"Bids: {format_amount(total_bids)} USDT\n"
-               f"FRR: {frr * 100 :.5f}% ({frr * 100 * 365 :.5f}% APR)")
-        # print(message)
+                   f"High: {highest_rate * 100 * 365:.2f}%\n"
+                   f"Bought: {format_amount(total_bought)}{add_money_bags(total_bought)}\n"
+                   f"Sold: {format_amount(total_sold)}{add_money_bags(total_bought)}\n"
+                   f"Offers: {format_amount(total_offers)}{add_money(total_offers)}\n"
+                   f"Bids: {format_amount(total_bids)}{add_money(total_bids)}\n"
+                   f"FRR: {frr * 100 :.5f}% ({frr * 100 * 365 :.5f}% APR)")
         send_telegram_message(message)
     else:
         print(f"Error fetching data for {currency}.")
