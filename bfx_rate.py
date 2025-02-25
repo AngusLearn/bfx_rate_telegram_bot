@@ -113,7 +113,7 @@ def fetch_and_print_data(currency):
         def add_money(amount):
             money = ""
             while amount >= 1_000:
-                money_bags += "💵"
+                money += "💵"
                 amount /= 10
             return money
         
