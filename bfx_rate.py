@@ -69,6 +69,7 @@ def fetch_funding_pool(currency):
 
 def fetch_funding_history(currency):
     try:
+        # Fetch the latest 125 trades for the given currency in the last 10 minutes
         url = f"{base_url}/trades/{currency}/hist?limit=125&sort=-1&start={(int(time.time()) - 600) * 1000}"
         headers = {
             'Accept': 'application/json'
@@ -125,14 +126,16 @@ def fetch_and_print_data(currency):
                 amount /= 10
             return money_bags
 
-        message = (f"{currency}\n"
+        message = (f"Alert‼️‼️‼️\n"
+                   f"{currency}\n"
                    f"High: {highest_rate * 100:.4f} ({highest_rate * 100 * 365:.2f}% APR)\n"
-                   f"Bought: {format_amount(total_bought)} {add_money_bags(total_bought)}\n"
-                   f"Sold: {format_amount(total_sold)} {add_money_bags(total_sold)}\n"
-                   f"Offers: {format_amount(total_offers)} {add_money(total_offers)}\n"
-                   f"Bids: {format_amount(total_bids)} {add_money(total_bids)}\n"
+                   f"Bought: {format_amount(total_bought)}  {add_money_bags(total_bought)}\n"
+                   f"Sold: {format_amount(total_sold)}  {add_money_bags(total_sold)}\n"
+                   f"Bids: {format_amount(total_bids)}  {add_money(total_bids)}\n"
+                   f"Offers: {format_amount(total_offers)}  {add_money(total_offers)}\n"
                    f"FRR: {frr * 100 :.5f}% ({frr * 100 * 365 :.5f}% APR)")
-        send_telegram_message(message)
+        if highest_rate * 100 * 365 >= 15:
+            send_telegram_message(message)
     else:
         print(f"Error fetching data for {currency}.")
 
