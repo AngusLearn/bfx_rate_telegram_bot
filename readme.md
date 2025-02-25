@@ -38,10 +38,6 @@ This is a Telegram bot that provides real-time exchange rates for various crypto
     */5 * * * * python [your_dir]/bfx_rate_telegram_bot/bfx_rate.py
     ```
 
-## Contributing
-
-Contributions are welcome! Please open an issue or submit a pull request for any improvements or bug fixes.
-
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
