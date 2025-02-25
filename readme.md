@@ -45,4 +45,3 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 ## Acknowledgements
 
 - [Bitfinex API](https://docs.bitfinex.com/docs)
-- [python-telegram-bot](https://github.com/python-telegram-bot/python-telegram-bot)
