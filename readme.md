@@ -74,17 +74,6 @@ This is a Telegram bot that sends funding rate notifications of fUSD and fUST us
     ```
     * The container will start in detached mode.
 
-3.  **Push the container to Dockerhub:**
-    * First, tag the image:
-    ```bash
-    docker tag bfx-rate-bot yourdockerhubusername/bfx-rate-bot:latest
-    ```
-    * Then push it:
-    ``` bash
-    docker push yourdockerhubusername/bfx-rate-bot:latest
-    ```
-    * Replace `yourdockerhubusername` with your actual Docker Hub username.
-
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
