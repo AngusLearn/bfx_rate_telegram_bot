@@ -70,7 +70,7 @@ def fetch_funding_pool(currency):
 def fetch_funding_history(currency):
     try:
         # Fetch the latest 125 trades for the given currency in the last 10 minutes
-        url = f"{base_url}/trades/{currency}/hist?limit=125&sort=-1&start={(int(time.time()) - 600) * 1000}"
+        url = f"{base_url}/trades/{currency}/hist?limit=125"
         headers = {
             'Accept': 'application/json'
         }
@@ -135,7 +135,7 @@ def fetch_and_print_data(currency):
 
         message = (
             f"⚠️⚠️⚠️\n"
-            f"===[{currency}]===\n"
+            f"===[   {currency}   ]===\n"
             f"High: {highest_rate * 100:.4f} ({highest_rate * 100 * 365:.2f}% APR)  {add_rockets(highest_rate * 100 * 365)}\n"
             f"Borrowed: {format_amount(total_bought)}  {add_money_bags(total_bought)}\n"
             f"Loaned: {format_amount(total_sold)}  {add_money_bags(total_sold)}\n"

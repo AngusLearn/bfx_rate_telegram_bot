@@ -5,8 +5,8 @@ This is a Telegram bot that provides real-time exchange rates for various crypto
 ## Features
 
 - Get real-time exchange rates for various cryptocurrencies.
-- Supports multiple currency pairs.
-- Easy to use commands.
+- Supports multiple currency pairs (default fUSD, fUST).
+- Only send notification if APR >= 15%
 
 ## Installation
 
