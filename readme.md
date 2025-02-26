@@ -1,10 +1,10 @@
 # BFX Rate Telegram Bot
 
-This is a Telegram bot that provides real-time exchange rates for various cryptocurrencies using the Bitfinex API.
+This is a Telegram bot that send funding rate notication of fUSD fUST using the Bitfinex API.
 
 ## Features
 
-- Get real-time exchange rates for various cryptocurrencies.
+- Get funding rates for various cryptocurrencies.
 - Supports multiple currency pairs (default fUSD, fUST).
 - Only send notification if APR >= 15%
 
