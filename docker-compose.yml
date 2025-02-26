@@ -1,0 +1,10 @@
+version: '3.9'
+
+services:
+  bfx_rate_bot:
+    build: .
+    container_name: bfx-rate-bot-container
+    environment:
+      - BOT_TOKEN=${BOT_TOKEN}
+      - CHAT_ID=${CHAT_ID}
+    command: ["cron", "-f", "-l", "2"] # start cron in the container
