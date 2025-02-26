@@ -1,3 +1,3 @@
 SHELL=/bin/bash
-# Run the script every 5 minutes
+# Run the script every 20 minutes
 12,32,52 * * * *  python /app/bfx_rate.py >> /var/log/cron.log 2>&1
