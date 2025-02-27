@@ -10,8 +10,11 @@ COPY . /app
 # Install any needed packages specified in requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
+# Update package lists
+RUN apt-get update && apt-get upgrade -y
+
 # Install cron
-RUN apt-get update && apt-get install -y cron
+RUN apt-get install -y cron
 
 # Copy the cron configuration file into the container
 COPY crontab /etc/cron.d/bfx_rate_cron
