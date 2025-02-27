@@ -81,6 +81,7 @@ You can pull the pre-built image from Docker Hub:
 
 ```bash
 docker pull anguslearn/bfx_rate_telegram_bot:latest
+```
 
 ### Docker Image Information
 * The docker image is based on the image `python:3.9-slim-buster`.
