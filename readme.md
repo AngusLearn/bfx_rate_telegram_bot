@@ -75,7 +75,7 @@ This is a Telegram bot that sends funding rate notifications of fUSD and fUST us
     ```
     * The container will start in detached mode.
 
-#### Pull from Docker Hub
+### Pull from Docker Hub
 
 You can pull the pre-built image from Docker Hub:
 

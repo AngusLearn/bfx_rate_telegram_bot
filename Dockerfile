@@ -16,6 +16,8 @@ RUN apt-get update && apt-get upgrade -y
 # Install cron
 RUN apt-get install -y cron
 
+
+
 # Copy the cron configuration file into the container
 COPY crontab /etc/cron.d/bfx_rate_cron
 
@@ -28,4 +30,4 @@ RUN crontab /etc/cron.d/bfx_rate_cron
 RUN touch /var/log/cron.log
 
 # Run cron and the python script when the container launches
-CMD ["cron", "-f", "-l", "2"]
+CMD printenv > /etc/environment && cron -f -l 2
