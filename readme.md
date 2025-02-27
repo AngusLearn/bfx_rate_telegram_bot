@@ -8,7 +8,7 @@ This is a Telegram bot that sends funding rate notifications of fUSD and fUST us
 -   Supports multiple currency pairs (default fUSD, fUST).
 -   Only send alert if APR >= 15%
 
-![alt text](https://imgur.com/a/TJhC7h7)
+![alt text](https://i.imgur.com/xzk8GOy.png)
 
 ## Installation
 
