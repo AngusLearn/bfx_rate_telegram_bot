@@ -4,9 +4,9 @@ This is a Telegram bot that sends funding rate notifications of fUSD and fUST us
 
 ## Features
 
-- Get funding rates for various cryptocurrencies.
-- Supports multiple currency pairs (default fUSD, fUST).
-- Only send notification if APR >= 15%
+-   Get funding rates for various cryptocurrencies.
+-   Supports multiple currency pairs (default fUSD, fUST).
+-   Only send alert if APR >= 15%
 
 ## Installation
 
@@ -25,7 +25,7 @@ This is a Telegram bot that sends funding rate notifications of fUSD and fUST us
     python3 -m venv .venv
     ```
 
-4.  **Activate the virtual enviroment:**
+4.  **Activate the virtual environment:**
     ```sh
     source .venv/bin/activate
     ```
@@ -38,18 +38,19 @@ This is a Telegram bot that sends funding rate notifications of fUSD and fUST us
 ## Configuration
 
 1.  **Create the `.env` file:**
+
     *   Copy the `env.example` file to `.env`:
-    ```sh
-    cp env.example .env
-    ```
+        ```sh
+        cp env.example .env
+        ```
     *   Edit the `.env` file and add your Telegram bot token and chat ID:
 
-    ```env
-    BOT_TOKEN=your_telegram_bot_token
-    CHAT_ID=your_chat_id
-    ```
+        ```env
+        BOT_TOKEN=your_telegram_bot_token
+        CHAT_ID=your_chat_id
+        ```
 
-    * **IMPORTANT:** Never commit the `.env` file to version control.
+    *   **IMPORTANT:** Never commit the `.env` file to version control.
 
 ## Usage
 
@@ -64,7 +65,7 @@ This is a Telegram bot that sends funding rate notifications of fUSD and fUST us
 
 1.  **Build the Docker image:**
     ```sh
-    docker build -t bfx-rate-bot .
+    docker build -t bfx-rate-telegram-bot .
     ```
 
 2.  **Run the Docker container:**
@@ -73,6 +74,18 @@ This is a Telegram bot that sends funding rate notifications of fUSD and fUST us
     docker compose up -d
     ```
     * The container will start in detached mode.
+
+#### Pull from Docker Hub
+
+You can pull the pre-built image from Docker Hub:
+
+```bash
+docker pull anguslearn/bfx_rate_telegram_bot:latest
+
+### Docker Image Information
+* The docker image is based on the image `python:3.9-slim-buster`.
+* The `cron` is installed in the image and run every 20 minutes.
+* The log of the cron is in `/var/log/cron.log` inside the container.
 
 ## License
 
