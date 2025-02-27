@@ -8,6 +8,8 @@ This is a Telegram bot that sends funding rate notifications of fUSD and fUST us
 -   Supports multiple currency pairs (default fUSD, fUST).
 -   Only send alert if APR >= 15%
 
+![alt text](https://private-user-images.githubusercontent.com/180091358/417769669-c4bf786a-db7e-4269-b6c0-9343c1d5280b.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDA2ODc4MzYsIm5iZiI6MTc0MDY4NzUzNiwicGF0aCI6Ii8xODAwOTEzNTgvNDE3NzY5NjY5LWM0YmY3ODZhLWRiN2UtNDI2OS1iNmMwLTkzNDNjMWQ1MjgwYi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwMjI3JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDIyN1QyMDE4NTZaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT01OWYyNDE0YTM3YmY5NjI5YzgyNjU3MmEyMzY5YjJiNzIxNzBkYWNkNTI2YTQ5NzZjODQ2ZjI1ZjJlN2U5ZGIxJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.v1VVyep19kqzcDigbo5xY-OyLhGPpRBor2_4j9aWkSI)
+
 ## Installation
 
 1.  **Clone the repository:**
