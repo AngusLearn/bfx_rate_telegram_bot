@@ -40,7 +40,7 @@ This is a Telegram bot that sends funding rate notifications of fUSD and fUST us
 1.  **Create the `.env` file:**
     *   Copy the `.env.example` file to `.env`:
     ```sh
-    cp .env.example .env
+    cp env.example .env
     ```
     *   Edit the `.env` file and add your Telegram bot token and chat ID:
 
