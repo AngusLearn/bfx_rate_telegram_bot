@@ -5,8 +5,8 @@ This is a Telegram bot that sends funding rate notifications of fUSD and fUST us
 ## Features
 
 -   Get funding rates for various cryptocurrencies.
--   Supports multiple currency pairs (default fUSD, fUST).
--   Only send alert if APR >= 15%
+-   Supports multiple currency pairs (default fUSD, fUST), configurable via `CURRENCIES`.
+-   Only send alert if APR >= `ALERT_APR` (default 15%)
 
 ![alt text](https://i.imgur.com/xzk8GOy.png)
 
@@ -50,6 +50,10 @@ This is a Telegram bot that sends funding rate notifications of fUSD and fUST us
         ```env
         BOT_TOKEN=your_telegram_bot_token
         CHAT_ID=your_chat_id
+
+        # Optional (defaults shown)
+        CURRENCIES=fUST,fUSD
+        ALERT_APR=15
         ```
 
     *   **IMPORTANT:** Never commit the `.env` file to version control.
@@ -58,9 +62,9 @@ This is a Telegram bot that sends funding rate notifications of fUSD and fUST us
 
 ### Without Docker
 
-1. Add a cronjob:
+1. Add a cronjob (use the venv's Python so dependencies are available):
     ```sh
-    12,32,52 * * * * python [your_dir]/bfx_rate_telegram_bot/bfx_rate.py
+    12,32,52 * * * * [your_dir]/bfx_rate_telegram_bot/.venv/bin/python [your_dir]/bfx_rate_telegram_bot/bfx_rate.py
     ```
 
 ### With Docker
@@ -76,6 +80,7 @@ This is a Telegram bot that sends funding rate notifications of fUSD and fUST us
     docker compose up -d
     ```
     * The container will start in detached mode.
+    * The environment variables must be set in your shell or in a `.env` file next to `docker-compose.yml` (compose reads `BOT_TOKEN`, `CHAT_ID`, and optionally `CURRENCIES` / `ALERT_APR` from there).
 
 ### Pull from Docker Hub
 
@@ -86,8 +91,9 @@ docker pull anguslearn/bfx_rate_telegram_bot:latest
 ```
 
 ### Docker Image Information
-* The docker image is based on the image `python:3.9-slim-buster`.
-* The `cron` is installed in the image and run every 20 minutes.
+* The docker image is based on the image `python:3.12-slim`.
+* The `cron` is installed in the image and runs every 20 minutes (defined in `/etc/cron.d/bfx_rate_cron`).
+* The container exports its environment to `/etc/environment` on start so the cron jobs can see `BOT_TOKEN` and `CHAT_ID`.
 * The log of the cron is in `/var/log/cron.log` inside the container.
 
 ## License
