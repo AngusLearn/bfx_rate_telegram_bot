@@ -47,3 +47,14 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
+
+      - name: Update Docker Hub overview page
+        uses: christian-korneck/update-container-description-action@v1
+        env:
+          DOCKER_USER: ${{ secrets.DOCKERHUB_USERNAME }}
+          DOCKER_PASS: ${{ secrets.DOCKERHUB_TOKEN }}
+        with:
+          destination_container_repo: ${{ env.IMAGE }}
+          provider: dockerhub
+          short_description: "Telegram bot that alerts on Bitfinex funding rates (fUSD, fUST)"
+          readme_file: DOCKER_HUB.md
