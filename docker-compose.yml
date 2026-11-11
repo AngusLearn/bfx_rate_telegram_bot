@@ -1,5 +1,3 @@
-version: '3.9'
-
 services:
   bfx_rate_bot:
     build: .
@@ -7,4 +5,5 @@ services:
     environment:
       - BOT_TOKEN=${BOT_TOKEN}
       - CHAT_ID=${CHAT_ID}
-    command: ["cron", "-f", "-l", "2"] # start cron in the container
+      - CURRENCIES=${CURRENCIES:-fUST,fUSD}
+      - ALERT_APR=${ALERT_APR:-15}
