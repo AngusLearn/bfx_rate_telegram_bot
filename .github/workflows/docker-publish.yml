@@ -49,6 +49,9 @@ jobs:
           cache-to: type=gha,mode=max
 
       - name: Update Docker Hub overview page
+        # Cosmetic only: needs a token with repo-edit ("Read, Write & Delete") scope.
+        # Never block image publishing if it fails.
+        continue-on-error: true
         uses: christian-korneck/update-container-description-action@v1
         env:
           DOCKER_USER: ${{ secrets.DOCKERHUB_USERNAME }}
